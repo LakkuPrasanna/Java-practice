@@ -1,4 +1,4 @@
-package multiDarrays;
+package singleDarrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -7,26 +7,19 @@ public class Arraysum {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		int rsize=sc.nextInt();
-		int csize=sc.nextInt();
-		int arr[][]=new int[rsize][csize];
-		for(int i=0;i<rsize;i++) {
-			for(int j=0;j<csize;j++) {
-				arr[i][j]=sc.nextInt();
-			}
-			}
-		for(int i=0;i<rsize;i++) {
-			System.out.println(Arrays.toString(arr[i]));
+		System.out.println("Enter array size");
+		int arrSize=sc.nextInt();
+		int arr[]=new int[arrSize];
+		for(int i=0;i<arrSize;i++) {
+			arr[i]=sc.nextInt();
 		}
+		System.out.println("Input: "+Arrays.toString(arr));
 		int sum=0;
-      for(int i=0;i<rsize;i++) {
-    	  for(int j=0;j<csize;j++) {
-    		  sum+=arr[i][j];
-    	  }
-      }
-      System.out.println("Sum:"+sum);
-		
-		
+		for(int i=0;i<arrSize;i++) {
+			sum+=arr[i];
+		}
+		System.out.println("sum: "+sum);
+		System.out.println("average: "+sum/arr.length);
 		sc.close();
 
 	}
